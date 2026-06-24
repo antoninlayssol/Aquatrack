@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AquaTrack — Compteur de douche connecté</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="style.css" />
+    
+    <link rel="icon" type="image/png" href="favicon-32x32.png" />
+
+    <script>
+        // Fonction pour descendre en bas de la page
+        function scrollToBottom() {
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: "smooth" // Pour une animation fluide lors du défilement
+            });
+        }
+
+        // Afficher le bouton lorsqu'on se trouve en haut de la page
+        window.onload = function() {
+            if (document.body.scrollTop === 0 || document.documentElement.scrollTop === 0) {
+                document.getElementById("btnBottom").style.display = "block";
+            } else {
+                document.getElementById("btnBottom").style.display = "none";
+            }
+        };
+    </script>
+</head>
+<body>
+
+    <button onclick="scrollToBottom()" id="btnBottom" title="Descendre en bas">&#8681; Bas</button>
+
+    <nav class="">
+        <ul>
+            <li class="btn">
+                <a href="#">Accueil</a>
+            </li>
+            <li class="btn">
+                <a href="mesure.html">Mesure</a>
+            </li>
+            <li class="btn">
+                <a href="eco-badge.html">Eco-Badge</a>
+            </li>
+            <li class="btn">
+                <a href="aquacontact.html">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="main-header">
+        <h1>AQUATRACK</h1>
+        <p class="subtitle">Le suivi intelligent de votre consommation d'eau</p>
+    </header>
+
+    <main class="showcase-container">
+        
+        <section class="showcase-card why-section">
+            <h2>Le "Pourquoi" de notre engagement 🌍</h2>
+            <div class="stat-quote">
+                <p>« Une douche moyenne dure <strong>9 minutes</strong> et consomme <strong>80 litres</strong> d'eau. Et vous ? »</p>
+            </div>
+            <p class="text-content">
+                L'objectif principal d'AquaTrack est de sensibiliser activement chaque citoyen au gaspillage d'eau quotidien. En prenant conscience de notre consommation en temps réel, nous pouvons préserver cette ressource précieuse tout en réduisant considérablement nos factures d'eau et d'énergie.
+            </p>
+        </section>
+
+        <section class="showcase-card hardware-section">
+            <h2>Comment ça marche ? (Hardware Showcase) ⚙️</h2>
+            <p class="text-content">Notre boîtier connecté utilise des composants électroniques de pointe pour suivre votre consommation de manière ultra-précise :</p>
+            
+            <div class="component-grid">
+                <div class="component-box">
+                    <span class="icon">🧠</span>
+                    <h3>Le Microcontrôleur ESP32</h3>
+                    <p>C'est le cerveau du projet. Il calcule instantanément les données reçues et les transmet en Wi-Fi à votre application en temps réel.</p>
+                </div>
+                <div class="component-box">
+                    <span class="icon">🚰</span>
+                    <h3>Le Capteur YF-B21</h3>
+                    <p>Le gardien du débit. Positionné sur le pommeau, il mesure le passage de l'eau au millilitre près pour comptabiliser le volume total.</p>
+                </div>
+            </div>
+
+            <div class="led-container">
+                <h3>Le Système d'Alerte Intelligent (3 LEDs) 🚨</h3>
+                <p class="text-content">Pendant votre douche, un indicateur visuel ludique change de couleur selon le volume consommé pour vous guider :</p>
+                
+                <ul class="led-list">
+                    <li class="led-item">
+                        <span class="led-icon">🟢</span>
+                        <div>
+                            <strong>Vert : Consommation responsable (Moins de 35 Litres)</strong>
+                            <p>Bravo ! Vous êtes dans la zone éco-citoyenne, la planète vous remercie.</p>
+                        </div>
+                    </li>
+                    <li class="led-item">
+                        <span class="led-icon">🟠</span>
+                        <div>
+                            <strong>Orange : Seuil de vigilance atteint (35 à 55 Litres)</strong>
+                            <p>Attention, le compteur tourne. Il est temps de commencer à vous rincer !</p>
+                        </div>
+                    </li>
+                    <li class="led-item">
+                        <span class="led-icon">🔴</span>
+                        <div>
+                            <strong>Rouge : Alerte surconsommation (Plus de 55 Litres)</strong>
+                            <p>Stop ! Seuil critique dépassé, fin de douche vivement conseillée pour éviter le gaspillage.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <button class="btn-top"><a href="#">Haut ↑</a></button>
+
+    <footer>
+         <p>&copy; 2026 AquaTrack. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

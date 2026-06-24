@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>AquaTrack — Vos Éco-Badges & Progression</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" />
+
+    <button onclick="scrollToBottom()" id="btnBottom" title="Descendre en bas">&#8681; Bas</button>
+</head>
+<body>
+
+    <nav class="">
+        <ul>
+            <li class="btn"><a href="index.html">Accueil</a></li>
+            <li class="btn"><a href="mesure.html">Mesure</a></li>
+            <li class="btn"><a href="#">Eco-Badge</a></li>
+            <li class="btn"><a href="aquacontact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-container" style="max-width: 1200px; margin: 40px auto; padding: 0 20px; font-family: 'Inter', sans-serif;">
+        
+        <header style="text-align: center; margin-bottom: 50px;">
+            <h1 id="profile-name-title" style="font-size: 2.5rem; font-weight: 800; margin-bottom: 10px; color: #22d3ee;">Statut de ...</h1>
+            <p style="color: #94a3b8; max-width: 600px; margin: 0 auto;">Progression de la personne actuellement sous la douche ou de la dernière session enregistrée.</p>
+        </header>
+
+        <section class="xp-container" style="background: rgba(30, 41, 59, 0.7); border: 1px solid #334155; padding: 30px; border-radius: 20px; margin-bottom: 40px; text-align: left;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+                <h2 id="xp-level-display" style="margin: 0; font-size: 1.5rem; font-weight: 800; color: #fff;">NIVEAU 1</h2>
+                <span id="text-xp-global" style="color: #38bdf8; font-weight: 600; font-size: 0.95rem;">0 / 500 XP (Total : 0 XP)</span>
+            </div>
+            <div class="progress-container" style="width: 100%; height: 14px; background: #1e293b; border-radius: 999px; overflow: hidden; border: 1px solid #475569;">
+                <div id="bar-xp-global" class="progress-bar" style="width: 0%; height: 100%; background: linear-gradient(90deg, #0ea5e9, #22d3ee); transition: width 0.4s ease;"></div>
+            </div>
+        </section>
+
+        <h2 style="text-align: left; font-size: 1.8rem; margin-bottom: 20px; font-weight: 700; color: #fff; border-bottom: 2px solid #1e293b; padding-bottom: 10px;">Ses Éco-Badges</h2>
+        <div class="badges-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 60px; text-align: left;">
+            
+            <div id="badge-rapide" class="badge-card locked" style="background: rgba(30, 41, 59, 0.5); border: 1px solid #334155; padding: 20px; border-radius: 16px; position: relative; transition: all 0.3s ease;">
+                <div class="badge-icon" style="font-size: 2.5rem; margin-bottom: 10px;">⚡</div>
+                <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #fff;">Douche Rapide</h3>
+                <p style="margin: 0 0 15px 0; font-size: 0.9rem; color: #94a3b8; min-height: 40px;">Prendre 5 douches de moins de 5 minutes.</p>
+                <div class="progress-container" style="width: 100%; height: 8px; background: #1e293b; border-radius: 999px; overflow: hidden; margin-bottom: 8px;">
+                    <div id="bar-rapide" class="progress-bar" style="width: 0%; height: 100%; background: #f59e0b; transition: width 0.4s ease;"></div>
+                </div>
+                <div id="text-rapide" class="badge-status" style="font-size: 0.85rem; font-weight: 700; color: #f59e0b; text-align: right;">0 / 5 douches</div>
+            </div>
+
+            <div id="badge-econome" class="badge-card locked" style="background: rgba(30, 41, 59, 0.5); border: 1px solid #334155; padding: 20px; border-radius: 16px; position: relative; transition: all 0.3s ease;">
+                <div class="badge-icon" style="font-size: 2.5rem; margin-bottom: 10px;">🌱</div>
+                <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #fff;">Économe</h3>
+                <p style="margin: 0 0 15px 0; font-size: 0.9rem; color: #94a3b8; min-height: 40px;">Consommer moins de 30 Litres d'eau sur 5 douches.</p>
+                <div class="progress-container" style="width: 100%; height: 8px; background: #1e293b; border-radius: 999px; overflow: hidden; margin-bottom: 8px;">
+                    <div id="bar-econome" class="progress-bar" style="width: 0%; height: 100%; background: #10b981; transition: width 0.4s ease;"></div>
+                </div>
+                <div id="text-econome" class="badge-status" style="font-size: 0.85rem; font-weight: 700; color: #10b981; text-align: right;">0 / 5 douches</div>
+            </div>
+
+            <div id="badge-ecoheros" class="badge-card locked" style="background: rgba(30, 41, 59, 0.5); border: 1px solid #334155; padding: 20px; border-radius: 16px; position: relative; transition: all 0.3s ease;">
+                <div class="badge-icon" style="font-size: 2.5rem; margin-bottom: 10px;">🦸‍♂️</div>
+                <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; color: #fff;">Éco Héros</h3>
+                <p style="margin: 0 0 15px 0; font-size: 0.9rem; color: #94a3b8; min-height: 40px;">Atteindre un total de 10 douches enregistrées au compteur.</p>
+                <div class="progress-container" style="width: 100%; height: 8px; background: #1e293b; border-radius: 999px; overflow: hidden; margin-bottom: 8px;">
+                    <div id="bar-ecoheros" class="progress-bar" style="width: 0%; height: 100%; background: #3b82f6; transition: width 0.4s ease;"></div>
+                </div>
+                <div id="text-ecoheros" class="badge-status" style="font-size: 0.85rem; font-weight: 700; color: #3b82f6; text-align: right;">0 / 10 douches</div>
+            </div>
+
+        </div>
+
+        <h2 style="text-align: left; font-size: 1.8rem; margin-bottom: 20px; font-weight: 700; color: #fff; border-bottom: 2px solid #1e293b; padding-bottom: 10px;">Tableau des Éco-Aventuriers</h2>
+        <p style="text-align: left; color: #94a3b8; margin-bottom: 25px;">Retrouvez ci-dessous le niveau, l'XP globale et les éco-badges débloqués par chaque membre de la maison.</p>
+        
+        <div id="toutes-les-progressions" style="display: grid; grid-template-columns: 1fr; gap: 20px; text-align: left; margin-bottom: 60px;">
+            <p style="color: #64748b; font-style: italic;">Aucun utilisateur trouvé.</p>
+        </div>
+
+    </main>
+
+    <footer style="margin-top: 50px; padding: 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); color: #64748b; font-size: 0.9rem;">
+        <p>&copy; 2026 AquaTrack. Tous droits réservés.</p>
+    </footer>
+
+    <button style="position: fixed; bottom: 20px; right: 20px; background: #22d3ee; border: none; padding: 10px 15px; border-radius: 8px; cursor: pointer;">
+        <a href="#" style="color: #071827; font-weight: bold; text-decoration: none;">Haut</a>
+    </button>
+
+    <script>
+        function scrollToBottom() {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+        }
+        window.onload = function() {
+            if (document.body.scrollTop === 0 || document.documentElement.scrollTop === 0) {
+                document.getElementById("btnBottom").style.display = "block";
+            } else {
+                document.getElementById("btnBottom").style.display = "none";
+            }
+        };
+    </script>
+    
+    <script type="module" src="app.js"></script>
+</body>
+</html>

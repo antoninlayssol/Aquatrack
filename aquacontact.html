@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AquaTrack — Nous Contacter</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="style.css" />
+    
+    <link rel="icon" type="image/png" href="favicon-32x32.png" />
+
+    <script>
+        // Fonction pour descendre en bas de la page
+        function scrollToBottom() {
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: "smooth"
+            });
+        }
+
+        // Afficher le bouton lorsqu'on se trouve en haut de la page
+        window.onload = function() {
+            if (document.body.scrollTop === 0 || document.documentElement.scrollTop === 0) {
+                document.getElementById("btnBottom").style.display = "block";
+            } else {
+                document.getElementById("btnBottom").style.display = "none";
+            }
+        };
+    </script>
+</head>
+<body>
+
+    <button onclick="scrollToBottom()" id="btnBottom" title="Descendre en bas">&#8681; Bas</button>
+
+    <nav>
+        <ul>
+            <li class="btn">
+                <a href="index.html">Accueil</a>
+            </li>
+            <li class="btn">
+                <a href="mesure.html">Mesure</a>
+            </li>
+            <li class="btn">
+                <a href="eco-badge.html">Eco-Badge</a>
+            </li>
+            <li class="btn active">
+                <a href="aquacontact.html">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="main-header">
+        <h1>CONTACTEZ-NOUS</h1>
+        <p class="subtitle">Une question sur le projet AquaTrack ? Notre équipe vous répond !</p>
+    </header>
+
+    <main class="showcase-container">
+        
+        <section class="showcase-card contact-section">
+            <h2>Formulaire & Coordonnées ✉️</h2>
+            <p class="text-content">
+                Bienvenue sur l'espace support d'AquaTrack. Que vous soyez un particulier curieux ou un partenaire éco-citoyen, n'hésitez pas à nous joindre.
+            </p>
+
+            <div class="contact-grid">
+                <div class="contact-box">
+                    <span class="contact-icon">📞</span>
+                    <h3>Téléphone</h3>
+                    <p class="contact-detail">01 48 75 02 83</p>
+                    <p class="contact-sub">Du lundi au vendredi (9h - 18h)</p>
+                </div>
+
+                <div class="contact-box">
+                    <span class="contact-icon">📧</span>
+                    <h3>Email</h3>
+                    <p class="contact-detail">contact@aquatrack.fr</p>
+                    <p class="contact-sub">Réponse sous 24h à 48h maximum</p>
+                </div>
+            </div>
+
+            <div class="stat-quote">
+                <p>💡 <strong>Note pour le projet :</strong> Ce module de contact permettra à terme aux utilisateurs de signaler un dysfonctionnement de leur boîtier connecté ESP32 ou de leur capteur YF-B21.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <button class="btn-top"><a href="#">Haut ↑</a></button>
+
+    <footer>
+         <p>&copy; 2026 AquaTrack. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
